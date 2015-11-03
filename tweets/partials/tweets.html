@@ -1,0 +1,8 @@
+<ul>
+    <li ng-repeat="tweet in tweets">
+        <div class="tweet">
+            <p>{{::tweet.text}}</p>
+            <span>- {{::twitter.user.name}} (@{{::twitter.user.screen_name}})</span>
+        </div>
+    </li>
+</ul>
