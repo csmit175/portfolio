@@ -1,0 +1,64 @@
+Questions
+
+1. What kind of phone do you have?
+
+	I currently use an Iphone 5s however I normally use a samsung galaxy note2 (The older model).
+
+2. Which social networks do you use daily?
+
+	I use facebook, instagram, twitter and linkedin generally just in the morning before work.
+
+3. Where and how are AngularJS templates rendered? Are there differences between
+AngularJS 1.x & 2.0?
+
+	Angular JS templates are typically rendered using the ngview directive so you can load different html templates based on what is passed
+	to the route service. In a more complex app a Template could be made up of multiple Template/Partials which are loaded in the same way
+	or through other directives or functions. 
+
+	The main differences between this in Angular 1.x & 2.0 is the syntax. Controllers and $scope are no longer used and have now be replaced by
+	components and directives. Components are basically directives that now use a template. The controller and view are still separated but the syntax
+	different.
+
+4. What are the ways to communicate between modules of your application using core
+AngularJS functionality? Name three ways. And which of those is most easily testable
+and why?
+
+	Three of the main ways to communicate across modules are:
+	
+	1.	Services: When declared you will be provided with an instance of the function. 
+	2.	Factories: When declared you will be provided with the value that is returned by invoking the function passed to module.factory.
+	3.	Providers: When declared you will be provided with (new ProviderFunction()).$get(). ProviderFunction is the function reference 
+		passed to module.provider.
+
+	In my opinion services is the most easily testable because they are injectable rather tan being instantiated automatically when a route is loaded 
+	or when the ng-controller directive is compiled.
+
+5. If you were to pick up a greenfield project today, would you recommend using version
+1.x or 2.0 of AngularJS and why?
+
+	I would choose to use 1.x as in my opinion angular 2.0 still has a ways to go in terms of development. Where as 1.x is much more stable and 
+	has much support online via the community and has more resources.
+
+6. In your opinion what is the most viable alternative to AngularJS at the moment and why?
+
+	The most viable alternative to AngularJS would either by ReactJS or Aurelia, Aurelia because its pretty similar to AngularJS in terms of core features
+	and was headed up by Rob Eisenberg who was part of the Angular 2.0 team. ReactJS would also be a good alternative depending on the type of project because
+	its not a complete MVC framework.
+
+
+7. In a SPA using AngularJS that requires customers to log in and out, what are some
+important security issues that might arise and how do you deal with them? Identify at
+least two.
+
+	Two examples of security issues for an angular js app is unsecure sessions and cross-site scripting attacks, Ways to mitigate this is to use a cookie based 
+	approach to authentication so that unauthorised user and redirected to the a login page. Anther way is to use authorization tokens in the header of the request. 
+	Once the user is authenticated he get a auth token, which he has to attach to every subsequent request in the Authorize HTTP header. Anuglar JS is also capable of 
+	intergrating with third party libaries such as OAuth.
+
+8. What is your preferred way to deploy a web app to a production environment? (By
+preferred, we mean if you were in charge and you could use whatever resources you
+wanted.)
+	
+	My preferred way to deploy production code would be to use bamboo to run any required scripts and unit test and then deploy the code to the correct location.
+	(e.g S3 bucket.) This way we could do deployments for large features or hotfixes with ease. On a side note this would also be linked to the branching strategy we
+	would be using.
