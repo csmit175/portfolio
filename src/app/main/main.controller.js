@@ -7,9 +7,9 @@
 
   /** @ngInject */
   function MainController($scope, dataService) {
-    $scope.data = "";
+    $scope.videos = "null";
     dataService.getData().then(function(response) {
-        $scope.data = response;
+        $scope.videos = response.data;
     });
   }
 
